@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MagangHub Batch 2 - Lowongan Kerja</title>
+    <title>Mandiri Profile - Professional Link Hub</title>
     <style>
         * {
             margin: 0;
@@ -172,9 +172,134 @@
 
         /* Large buttons for featured links */
         .glass-btn.full-width {
-            grid-column: 1 / -1;
             padding: 16px;
             font-size: 14px;
+        }
+
+        /* Dropdown Section */
+        .dropdown-section {
+            margin-bottom: 8px;
+        }
+
+        .dropdown-header {
+            padding: 14px 16px;
+            border: none;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            letter-spacing: -0.3px;
+        }
+
+        .dropdown-header:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-header.active {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .dropdown-arrow {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            font-size: 16px;
+        }
+
+        .dropdown-header.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+            display: none;
+            animation: slideDown 0.3s ease;
+        }
+
+        .dropdown-content.active {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+            }
+            to {
+                opacity: 1;
+                max-height: 2000px;
+                overflow: visible;
+            }
+        }
+
+        .dropdown-item {
+            padding: 10px 16px;
+            margin-left: 8px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 6px;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            padding-left: 20px;
+        }
+
+        .dropdown-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Text Links */
+        .text-link {
+            padding: 14px 0;
+            border: none;
+            background: none;
+            backdrop-filter: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: none;
+            margin-bottom: 20px;
+        }
+
+        .text-link:hover {
+            transform: none;
+            opacity: 0.8;
+            box-shadow: none;
+        }
+
+        .text-link:active {
+            transform: none;
+            opacity: 0.6;
         }
 
         /* Social Icons Row */
@@ -263,70 +388,220 @@
         <!-- Profile Header -->
         <div class="profile-header">
             <div class="profile-avatar">M</div>
-            <h1 class="profile-name">MagangHub Batch 2</h1>
-            <p class="profile-bio">LMagangHub Kemnaker x Bank Mandiri
-            </p>
+            <h1 class="profile-name">MagangHub Batch 2 Kemnaker X Bank Mandiri</h1>
+            <p class="profile-bio">Lowongan Kerja Terbaik untuk Mahasiswa</p>
         </div>
 
-        <!-- Links Grid -->
+        <!-- Featured Links -->
+        <!-- None for this page -->
+
+        <!-- Links Container with Dropdowns -->
         <div class="links-container">
-            <!-- Featured Links -->
-            <!--<a href="#" class="glass-btn full-width blue">Official Website</a>
-            <a href="#" class="glass-btn full-width yellow">Mobile Banking</a>-->
+            <!-- Kantor Pusat -->
+            <div class="dropdown-section">
+                <button class="dropdown-header" onclick="toggleDropdown(this)">
+                    <span>Kantor Pusat</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">Accounting Intern</a>
+                    <a href="#" class="dropdown-item">Commercial Banking Intern</a>
+                    <a href="#" class="dropdown-item">Consumer Banking Intern</a>
+                    <a href="#" class="dropdown-item">Compliance and AML Intern</a>
+                    <a href="#" class="dropdown-item">Human Capital and Data Intern</a>
+                    <a href="#" class="dropdown-item">Corporate Secretary Intern</a>
+                    <a href="#" class="dropdown-item">Information Technology Intern</a>
+                    <a href="#" class="dropdown-item">Network & Retail Funding Intern</a>
+                    <a href="#" class="dropdown-item">Special Assets Management Intern</a>
+                    <a href="#" class="dropdown-item">Treasury and International Banking Intern</a>
+                </div>
+            </div>
 
-            <!-- Primary Links -->
-            <a href="#" class="glass-btn">Accounting Intern</a>
-            <a href="#" class="glass-btn">Commercial Banking Intern</a>
-            <a href="#" class="glass-btn">Consumer Banking Intern</a>
-            <a href="#" class="glass-btn">Compliance and AML Intern</a>
-            <a href="#" class="glass-btn">Human Capital and Data Intern</a>
-            <a href="#" class="glass-btn">Corporate Secretary Intern</a>
-            <a href="#" class="glass-btn">Information Technology Intern</a>
-            <a href="#" class="glass-btn">Network & Retail Funding Intern</a>
-            <a href="#" class="glass-btn">Special Assets Management Intern</a>
-            <a href="#" class="glass-btn">Treasury and International Banking Intern</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Rantau Prapat</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Batam</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Medan Balaikota</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Dumai</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Medan Imam Bonjol</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Pematangsiantar</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Pangkalpinang</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Bengkulu</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Padang</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - REGION III/Jakarta 1</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Jakarta Thamrin</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Jakarta Gambir</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Kebon Sirih</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Bekasi Menara Mandiri</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern -REGION V/ Jakarta 3</a>
-            <a href="#" class="glass-btn">Retail Funding & Consumer Banking Intern - Region VI</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Bandung Surapati</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Bandung Braga</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Bandung Asia Afrika</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Sukabumi</a>
-            <a href="#" class="glass-btn">Retail Funding & Consumer Banking - Region VII / Jawa 2</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Solo</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Semarang Pemuda</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Semarang Pahlawan</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Purwokerto</a>
-            <a href="#" class="glass-btn">Retail Funding & Consumer Banking Intern - Region VIII/Jawa 3</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Surabaya Pemuda</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Surabaya Niaga</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Surabaya Gentengkali</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Balikpapan</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Banjarmasin</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Samarinda</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Palangkaraya</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Palu</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Kuta</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Mataram</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Papua</a>
-            <a href="#" class="glass-btn">Retail Funding and Consumer Banking Intern - Area Jayapura</a>
+            <!-- Region I / Sumatera 1 -->
+            <div class="dropdown-section">
+                <button class="dropdown-header" onclick="toggleDropdown(this)">
+                    <span>Region I / Sumatera 1</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Rantau Prapat</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Batam</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Medan Balaikota</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Dumai</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Medan Imam Bonjol</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Pematangsiantar</a>
+                </div>
+            </div>
+
+            <!-- Region II / Sumatera 2 -->
+            <div class="dropdown-section">
+                <button class="dropdown-header" onclick="toggleDropdown(this)">
+                    <span>Region II / Sumatera 2</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Pangkalpinang</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Bengkulu</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Padang</a>
+                </div>
+            </div>
+
+            <!-- Region III / Jakarta 1 -->
+            <div class="dropdown-section">
+                <button class="dropdown-header" onclick="toggleDropdown(this)">
+                    <span>Region III / Jakarta 1</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - REGION III/Jakarta 1</a>
+                </div>
+            </div>
+
+            <!-- Region IV / Jakarta 2 -->
+            <div class="dropdown-section">
+                <button class="dropdown-header" onclick="toggleDropdown(this)">
+                    <span>Region IV / Jakarta 2</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Jakarta Thamrin</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Jakarta Gambir</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Kebon Sirih</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Bekasi Menara Mandiri</a>
+                </div>
+            </div>
+
+            <!-- Region V / Jakarta 3 -->
+            <div class="dropdown-section">
+                <button class="dropdown-header" onclick="toggleDropdown(this)">
+                    <span>Region V / Jakarta 3</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern -REGION V/ Jakarta 3</a>
+                </div>
+            </div>
+
+            <!-- Region VI / Jawa 1 -->
+            <div class="dropdown-section">
+                <button class="dropdown-header" onclick="toggleDropdown(this)">
+                    <span>Region VI / Jawa 1</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">Retail Funding & Consumer Banking Intern - Region VI</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Bandung Surapati</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Bandung Braga</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Bandung Asia Afrika</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Sukabumi</a>
+                </div>
+            </div>
+
+            <!-- Region VII / Jawa 2 -->
+            <div class="dropdown-section">
+                <button class="dropdown-header" onclick="toggleDropdown(this)">
+                    <span>Region VII / Jawa 2</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">Retail Funding & Consumer Banking - Region VII / Jawa 2</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Solo</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Semarang Pemuda</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Semarang Pahlawan</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Purwokerto</a>
+                </div>
+            </div>
+
+            <!-- Region VIII / Jawa 3 -->
+            <div class="dropdown-section">
+                <button class="dropdown-header" onclick="toggleDropdown(this)">
+                    <span>Region VIII / Jawa 3</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">Retail Funding & Consumer Banking Intern - Region VIII/Jawa 3</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Surabaya Pemuda</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Surabaya Niaga</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Surabaya Gentengkali</a>
+                </div>
+            </div>
+
+            <!-- Region IX / Kalimantan -->
+            <div class="dropdown-section">
+                <button class="dropdown-header" onclick="toggleDropdown(this)">
+                    <span>Region IX / Kalimantan</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Balikpapan</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Banjarmasin</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Samarinda</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Palangkaraya</a>
+                </div>
+            </div>
+
+            <!-- Region X / Sulawesi -->
+            <div class="dropdown-section">
+                <button class="dropdown-header" onclick="toggleDropdown(this)">
+                    <span>Region X / Sulawesi</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Palu</a>
+                </div>
+            </div>
+
+            <!-- Region XI / Bali dan Nusa Tenggara -->
+            <div class="dropdown-section">
+                <button class="dropdown-header" onclick="toggleDropdown(this)">
+                    <span>Region XI / Bali dan Nusa Tenggara</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Kuta</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Mataram</a>
+                </div>
+            </div>
+
+            <!-- Region XII / Papua -->
+            <div class="dropdown-section">
+                <button class="dropdown-header" onclick="toggleDropdown(this)">
+                    <span>Region XII / Papua</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Papua</a>
+                    <a href="#" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Jayapura</a>
+                </div>
+            </div>
         </div>
+
     </div>
 
     <script>
+        // Toggle dropdown functionality
+        function toggleDropdown(button) {
+            const content = button.nextElementSibling;
+            const isActive = button.classList.contains('active');
+            
+            // Close all other dropdowns
+            document.querySelectorAll('.dropdown-header').forEach(header => {
+                if (header !== button) {
+                    header.classList.remove('active');
+                    header.nextElementSibling.classList.remove('active');
+                }
+            });
+            
+            // Toggle current dropdown
+            if (isActive) {
+                button.classList.remove('active');
+                content.classList.remove('active');
+            } else {
+                button.classList.add('active');
+                content.classList.add('active');
+            }
+        }
+
         // Add smooth scroll behavior
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -334,25 +609,11 @@
             });
         });
 
-        // Add ripple effect on click
-        const buttons = document.querySelectorAll('.glass-btn, .social-icon');
-        buttons.forEach(button => {
-            button.addEventListener('click', function(e) {
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = x + 'px';
-                ripple.style.top = y + 'px';
-                ripple.classList.add('ripple');
-
-                // Optional: Add ripple effect styling if desired
-                // This is a comment for potential ripple animation
-            });
-        });
+        // Open first region by default
+        const firstHeader = document.querySelector('.dropdown-header');
+        if (firstHeader) {
+            toggleDropdown(firstHeader);
+        }
     </script>
 </body>
 </html>
