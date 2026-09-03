@@ -408,7 +408,7 @@
         <!-- Profile Header -->
         <div class="profile-header">
             <div class="profile-avatar">
-                <img src="D:\Intern Mandiri\Linktree Maganghub\Logo_Mandiri_Transparent.png" alt="Profile Logo">
+                <img src="Logo_Mandiri_Transparent.png" alt="Profile Logo">
             </div>
             <h1 class="profile-name">MagangHub Batch 2 Kemnaker X Bank Mandiri</h1>
             <p class="profile-bio">Lowongan Kerja MagangHub di Bank Mandiri</p>
@@ -606,21 +606,28 @@
             const content = button.nextElementSibling;
             const isActive = button.classList.contains('active');
             
-            // Close all other dropdowns
+            // Tutup semua dropdown lainnya
             document.querySelectorAll('.dropdown-header').forEach(header => {
                 if (header !== button) {
                     header.classList.remove('active');
-                    header.nextElementSibling.classList.remove('active');
+                    const otherContent = header.nextElementSibling;
+                    if (otherContent) {
+                        otherContent.classList.remove('active');
+                        otherContent.style.maxHeight = null;
+                    }
                 }
             });
             
-            // Toggle current dropdown
+            // Toggle dropdown saat ini
             if (isActive) {
                 button.classList.remove('active');
                 content.classList.remove('active');
+                content.style.maxHeight = null;
             } else {
                 button.classList.add('active');
                 content.classList.add('active');
+                // Set max-height sesuai tinggi asli konten agar animasi berjalan
+                content.style.maxHeight = content.scrollHeight + "px";
             }
         }
 
