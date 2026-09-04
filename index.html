@@ -217,31 +217,36 @@
         }
 
         .dropdown-content {
-            display: none;
-            margin-top: 6px;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 0;
+}
 
-        .dropdown-content.active {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
+.dropdown-content.active {
+    max-height: 2000px; /* Otomatis melar mengikuti isi sub-dropdown */
+    margin-top: 6px;
+}
 
-        .sub-dropdown-content {
-            display: none;
-            margin-left: 8px;
-            margin-top: 4px;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
+.sub-dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-left: 8px;
+    margin-top: 0;
+}
 
-        .sub-dropdown-content.active {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
+.sub-dropdown-content.active {
+    max-height: 1000px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
 
         .dropdown-item {
             padding: 8px 14px;
@@ -499,62 +504,28 @@
 
     <script>
         // Main Dropdown Toggle
-        function toggleDropdown(button) {
-            const content = button.nextElementSibling;
-            const isActive = button.classList.contains('active');
-            
-            // Tutup semua dropdown utama lainnya
-            document.querySelectorAll('.dropdown-header').forEach(header => {
-                if (header !== button) {
-                    header.classList.remove('active');
-                    const otherContent = header.nextElementSibling;
-                    if (otherContent) {
-                        otherContent.classList.remove('active');
-                        otherContent.style.maxHeight = null;
-                    }
-                }
-            });
-            
-            // Toggle dropdown saat ini
-            if (isActive) {
-                button.classList.remove('active');
-                content.classList.remove('active');
-                content.style.maxHeight = null;
-            } else {
-                button.classList.add('active');
-                content.classList.add('active');
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
+function toggleDropdown(button) {
+    const content = button.nextElementSibling;
+    
+    // Menutup dropdown utama lain yang sedang terbuka
+    document.querySelectorAll('.dropdown-header').forEach(header => {
+        if (header !== button) {
+            header.classList.remove('active');
+            header.nextElementSibling.classList.remove('active');
         }
+    });
+    
+    // Buka/tutup dropdown yang di-klik
+    button.classList.toggle('active');
+    content.classList.toggle('active');
+}
 
-        // Sub-Dropdown Toggle
-        function toggleSubDropdown(button) {
-            const content = button.nextElementSibling;
-            const isActive = button.classList.contains('active');
-            const parentDropdownContent = button.closest('.dropdown-content');
-
-            if (isActive) {
-                button.classList.remove('active');
-                content.classList.remove('active');
-                content.style.maxHeight = null;
-            } else {
-                button.classList.add('active');
-                content.classList.add('active');
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
-
-            // Update height kontainer induk supaya tidak terpotong
-            if (parentDropdownContent) {
-                parentDropdownContent.style.maxHeight = parentDropdownContent.scrollHeight + "px";
-            }
-        }
-
-        // Add smooth scroll behavior
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-            });
-        });
+// Sub-Dropdown Toggle
+function toggleSubDropdown(button) {
+    // Buka/tutup sub-dropdown tanpa mengganggu parent-nya
+    button.classList.toggle('active');
+    button.nextElementSibling.classList.toggle('active');
+}
     </script>
 </body>
 </html>
