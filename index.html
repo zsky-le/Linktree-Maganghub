@@ -706,44 +706,61 @@
         </div>
     </div>
 
-    <script>
-        // Toggle dropdown functionality
-        function toggleDropdown(button) {
-            const content = button.nextElementSibling;
-            const isActive = button.classList.contains('active');
-            
-            // Tutup semua dropdown lainnya
-            document.querySelectorAll('.dropdown-header').forEach(header => {
-                if (header !== button) {
-                    header.classList.remove('active');
-                    const otherContent = header.nextElementSibling;
-                    if (otherContent) {
-                        otherContent.classList.remove('active');
-                        otherContent.style.maxHeight = null;
-                    }
+<script>
+    // Main Dropdown Toggle
+    function toggleDropdown(button) {
+        const content = button.nextElementSibling;
+        const isActive = button.classList.contains('active');
+        
+        // Close other main dropdowns
+        document.querySelectorAll('.dropdown-header').forEach(header => {
+            if (header !== button) {
+                header.classList.remove('active');
+                const otherContent = header.nextElementSibling;
+                if (otherContent) {
+                    otherContent.classList.remove('active');
+                    otherContent.style.maxHeight = null;
                 }
-            });
-            
-            // Toggle dropdown saat ini
-            if (isActive) {
-                button.classList.remove('active');
-                content.classList.remove('active');
-                content.style.maxHeight = null;
-            } else {
-                button.classList.add('active');
-                content.classList.add('active');
-                // Set max-height sesuai tinggi asli konten agar animasi berjalan
-                content.style.maxHeight = content.scrollHeight + "px";
             }
+        });
+        
+        if (isActive) {
+            button.classList.remove('active');
+            content.classList.remove('active');
+            content.style.maxHeight = null;
+        } else {
+            button.classList.add('active');
+            content.classList.add('active');
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    }
+
+    // Sub-Dropdown Toggle
+    function toggleSubDropdown(button) {
+        const content = button.nextElementSibling;
+        const isActive = button.classList.contains('active');
+        const parentDropdownContent = button.closest('.dropdown-content');
+
+        if (isActive) {
+            button.classList.remove('active');
+            content.classList.remove('active');
+        } else {
+            button.classList.add('active');
+            content.classList.add('active');
         }
 
-        // Add smooth scroll behavior
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-            });
-        });
+        // Adjust parent container height to prevent clipping nested options
+        if (parentDropdownContent) {
+            parentDropdownContent.style.maxHeight = parentDropdownContent.scrollHeight + "px";
+        }
+    }
 
-    </script>
+    // Smooth scroll handler
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+        });
+    });
+</script>
 </body>
 </html>
