@@ -60,22 +60,13 @@
             border-radius: 50%;
             margin: 0 auto 15px;
             box-shadow: 0 8px 24px rgba(0, 61, 121, 0.3);
-            /*border: 3px solid rgba(255, 255, 255, 0.4);
-            
-            /* Required for clipping the image to the circle */
-            /*overflow: hidden; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #fff; /* Optional background color if the PNG is transparent */
-            }
+        }
 
-            /* Style the PNG image inside the avatar */
         .profile-avatar img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Prevents image distortion */
-            }   
+            object-fit: contain;
+        }   
 
         .profile-name {
             font-size: 24px;
@@ -93,15 +84,18 @@
 
         /* Links Grid */
         .links-container {
-            display: grid;
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 12px;
             margin-bottom: 30px;
         }
 
-        /* Glass Button Styles */
-        .glass-btn {
-            position: relative;
+        /* Dropdown Section */
+        .dropdown-section {
+            margin-bottom: 6px;
+        }
+
+        .dropdown-header {
             padding: 14px 16px;
             border: none;
             border-radius: 16px;
@@ -109,243 +103,167 @@
             backdrop-filter: blur(10px);
             border: 1.5px solid rgba(255, 255, 255, 0.3);
             color: white;
-            font-size: 13px;
-            font-weight: 500;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-            overflow: hidden;
-            text-align: center;
-            line-height: 1.2;
-        }
-
-        .glass-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            letter-spacing: -0.3px;
+            gap: 10px;
         }
 
-        .glass-btn:hover {
+        .header-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .header-title {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.3;
+            color: #ffffff;
+            display: block;
+        }
+
+        .header-subtitle {
+            font-size: 11px;
+            font-weight: 400;
+            opacity: 0.85;
+            margin-top: 2px;
+            line-height: 1.2;
+            color: rgba(255, 255, 255, 0.85);
+            display: block;
+        }
+
+        .dropdown-header:hover {
             background: rgba(255, 255, 255, 0.25);
             border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
         }
 
-        .glass-btn:active {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        .dropdown-header.active {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
         }
 
-        .glass-btn:hover::before {
-            left: 100%;
-        }
-
-        .glass-btn:focus {
-            outline: 2px solid rgba(255, 255, 255, 0.6);
-            outline-offset: 2px;
-        }
-
-        /* Colored variants */
-        .glass-btn.blue {
-            border-color: rgba(0, 61, 121, 0.3);
-            background: rgba(0, 61, 121, 0.15);
-        }
-
-        .glass-btn.blue:hover {
-            background: rgba(0, 61, 121, 0.25);
-            border-color: rgba(0, 61, 121, 0.5);
-            box-shadow: 0 12px 32px rgba(0, 61, 121, 0.2);
-        }
-
-        .glass-btn.yellow {
-            border-color: rgba(255, 183, 0, 0.3);
-            background: rgba(255, 183, 0, 0.15);
-        }
-
-        .glass-btn.yellow:hover {
-            background: rgba(255, 183, 0, 0.25);
-            border-color: rgba(255, 183, 0, 0.5);
-            box-shadow: 0 12px 32px rgba(255, 183, 0, 0.2);
-        }
-
-        /* Large buttons for featured links */
-        .glass-btn.full-width {
-            padding: 16px;
+        .dropdown-arrow {
+            display: inline-block;
+            transition: transform 0.3s ease;
             font-size: 14px;
         }
 
-        /* Dropdown Section */
-        /* Dropdown Section */
-.dropdown-section {
-    margin-bottom: 12px;
-}
+        .dropdown-header.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
 
-.dropdown-header {
-    padding: 14px 16px;
-    border: none;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1.5px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    width: 100%;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    letter-spacing: -0.3px;
-    gap: 10px;
-}
+        /* Sub-dropdown header */
+        .sub-dropdown-header {
+            padding: 10px 14px;
+            margin-left: 8px;
+            border: none;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: calc(100% - 8px);
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
 
-/* Sub-dropdown header */
-.sub-dropdown-header {
-    padding: 12px 16px;
-    margin-left: 12px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border: none;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: calc(100% - 12px);
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.dropdown-content {
-    display: none;
-    margin-top: 8px;
-}
-
-.dropdown-content.active {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.sub-dropdown-content {
-    display: none;
-    margin-left: 12px;
-    margin-top: 6px;
-    margin-bottom: 8px;
-}
-
-.sub-dropdown-content.active {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.dropdown-item {
-    padding: 10px 16px;
-    margin-left: 12px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: white;
-    font-size: 13px;
-    font-weight: 500;
-    text-decoration: none;
-    display: block;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-bottom: 0;
-}
- 
-        .dropdown-item:hover {
+        .sub-dropdown-header:hover {
             background: rgba(255, 255, 255, 0.15);
             border-color: rgba(255, 255, 255, 0.3);
-            padding-left: 20px;
-        }
- 
-        .dropdown-item:last-child {
-            margin-bottom: 0;
         }
 
-        /* Text Links */
-        .text-link {
-            padding: 14px 0;
-            border: none;
-            background: none;
-            backdrop-filter: none;
-            border: none;
+        .sub-dropdown-header.active {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .sub-dropdown-arrow {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .sub-dropdown-header.active .sub-dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .sub-header-text {
+            flex: 1;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .sub-header-title {
+            font-weight: 600;
+        }
+
+        .dropdown-content {
+            display: none;
+            margin-top: 6px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .dropdown-content.active {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .sub-dropdown-content {
+            display: none;
+            margin-left: 8px;
+            margin-top: 4px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .sub-dropdown-content.active {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .dropdown-item {
+            padding: 8px 14px;
+            margin-left: 8px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             color: white;
-            font-size: 16px;
+            font-size: 12px;
             font-weight: 500;
             text-decoration: none;
             display: block;
-            text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: none;
-            margin-bottom: 20px;
+            margin-bottom: 0;
+            width: calc(100% - 8px);
         }
 
-        .text-link:hover {
-            transform: none;
-            opacity: 0.8;
-            box-shadow: none;
-        }
-
-        .text-link:active {
-            transform: none;
-            opacity: 0.6;
-        }
-
-        /* Social Icons Row */
-        .social-row {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .social-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
+        .dropdown-item:hover {
             background: rgba(255, 255, 255, 0.15);
-            border: 1.5px solid rgba(255, 255, 255, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-decoration: none;
-        }
-
-        .social-icon:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            padding-left: 18px;
         }
 
         /* Responsive */
@@ -358,42 +276,7 @@
                 padding: 25px 15px;
                 margin-bottom: 30px;
             }
-
-            .links-container {
-                gap: 10px;
-            }
-
-            .glass-btn {
-                font-size: 12px;
-                padding: 12px 12px;
-            }
         }
-
-        /* Animation stagger for buttons */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .glass-btn {
-            animation: fadeInUp 0.5s ease-out forwards;
-        }
-
-        .glass-btn:nth-child(1) { animation-delay: 0.1s; }
-        .glass-btn:nth-child(2) { animation-delay: 0.12s; }
-        .glass-btn:nth-child(3) { animation-delay: 0.14s; }
-        .glass-btn:nth-child(4) { animation-delay: 0.16s; }
-        .glass-btn:nth-child(5) { animation-delay: 0.18s; }
-        .glass-btn:nth-child(6) { animation-delay: 0.2s; }
-        .glass-btn:nth-child(7) { animation-delay: 0.22s; }
-        .glass-btn:nth-child(8) { animation-delay: 0.24s; }
-        .glass-btn:nth-child(n+9) { animation-delay: calc(0.26s + (var(--index) * 0.02s)); }
     </style>
 </head>
 <body>
@@ -406,9 +289,6 @@
             <h1 class="profile-name">MagangHub Batch 2 Kemnaker X Bank Mandiri</h1>
             <p class="profile-bio">Lowongan Kerja MagangHub di Bank Mandiri</p>
         </div>
-
-        <!-- Featured Links -->
-        <!-- None for this page -->
 
         <!-- Links Container with Dropdowns -->
         <div class="links-container">
@@ -444,7 +324,6 @@
                     <span class="dropdown-arrow">▼</span>
                 </button>
                 <div class="dropdown-content">
- 
                     <!-- Region III/Jakarta 1 -->
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
                         <div class="sub-header-text">
@@ -455,7 +334,7 @@
                     <div class="sub-dropdown-content">
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a055ee-34fe-70f3-9927-13f8a29c3054" class="dropdown-item">Retail Funding and Consumer Banking Intern - REGION III/Jakarta 1</a>
                     </div>
- 
+
                     <!-- Region IV/Jakarta 2 -->
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
                         <div class="sub-header-text">
@@ -468,7 +347,7 @@
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-area-jakarta-gambir-01a05619-6511-7312-8f2f-297514c742eb" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Jakarta Gambir</a>
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern-area-jakarta-kebon-sirih-01a04304-f0cc-7148-b513-be76fef5bcf1" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Kebon Sirih</a>
                     </div>
- 
+
                     <!-- Region V/Jakarta 3 -->
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
                         <div class="sub-header-text">
@@ -479,10 +358,9 @@
                     <div class="sub-dropdown-content">
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a056a4-df48-726a-988e-190bf8f36cf2" class="dropdown-item">Retail Funding and Consumer Banking Intern -REGION V/ Jakarta 3</a>
                     </div>
- 
                 </div>
             </div>
- 
+
             <!-- Regional Office non-Jabodetabek -->
             <div class="dropdown-section">
                 <button class="dropdown-header" onclick="toggleDropdown(this)">
@@ -493,7 +371,6 @@
                     <span class="dropdown-arrow">▼</span>
                 </button>
                 <div class="dropdown-content">
- 
                     <!-- Region I/Sumatera 1 -->
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
                         <div class="sub-header-text">
@@ -509,7 +386,7 @@
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern---area-medan-imam-bonjol-01a04600-b34f-72f4-b4c1-1ecc11585d5f" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Medan Imam Bonjol</a>
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-and-consumer-banking-intern---area-pematangsiantar-01a05722-9ee6-73cf-a4c3-99831f604467" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Pematangsiantar</a>
                     </div>
- 
+
                     <!-- Region II/Sumatera 2 -->
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
                         <div class="sub-header-text">
@@ -522,7 +399,7 @@
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-and-consumer-banking-intern-area-bengkulu-01a05618-d0af-7339-94b8-3adf5386da72" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Bengkulu</a>
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-and-consumer-banking-intern---area-padang-01a05621-d153-7283-9e67-b9fc9ce9d025" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Padang</a>
                     </div>
- 
+
                     <!-- Region VI/Jawa 1 -->
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
                         <div class="sub-header-text">
@@ -537,7 +414,7 @@
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern---area-bandung-asia-afrika-01a047d9-44f2-71f2-aebe-0e133c66af07" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Bandung Asia Afrika</a>
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-and-consumer-banking-intern---area-sukabumi-01a047f8-f155-708f-9503-99f1773e0233" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Sukabumi</a>
                     </div>
- 
+
                     <!-- Region VII/Jawa 2 -->
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
                         <div class="sub-header-text">
@@ -552,7 +429,7 @@
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern-2---area-semarang-pahlawan-01a051df-1aa7-733b-a93e-669803a8446c" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Semarang Pahlawan</a>
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-and-consumer-banking-intern---area-purwokerto-01a041aa-f2c8-7011-97d9-3c0a1219dd88" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Purwokerto</a>
                     </div>
- 
+
                     <!-- Region VIII/Jawa 3 -->
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
                         <div class="sub-header-text">
@@ -566,7 +443,7 @@
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern---area-surabaya-niaga-01a04860-8cdb-7108-983a-a9f23b790a89" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Surabaya Niaga</a>
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern-area-surabaya-gentengkali-01a04898-7b94-7111-9554-bca1212ae049" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Surabaya Gentengkali</a>
                     </div>
- 
+
                     <!-- Region IX/Kalimantan -->
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
                         <div class="sub-header-text">
@@ -580,7 +457,7 @@
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern---area-samarinda-01a04735-fe68-708a-ac0c-73ec8afd9b3e" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Samarinda</a>
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern---area-palangkaraya-01a05799-4279-715f-b413-171e41e7adeb" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Palangkaraya</a>
                     </div>
- 
+
                     <!-- Region X/Sulawesi -->
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
                         <div class="sub-header-text">
@@ -591,7 +468,7 @@
                     <div class="sub-dropdown-content">
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-and-consumer-banking-intern---area-palu-01a05306-8dc9-71c9-baf3-8a3d75b61747" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Palu</a>
                     </div>
- 
+
                     <!-- Region XI/Bali dan Nusa Tenggara -->
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
                         <div class="sub-header-text">
@@ -603,7 +480,7 @@
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-and-consumer-banking-intern---area-kuta-bali-01a05696-62a5-700c-9d3b-6198e23ea096" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Kuta</a>
                         <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern---area-mataram-01a0578e-f5c5-73fe-8f6f-852f4fbb88f7" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Mataram</a>
                     </div>
- 
+
                     <!-- Region XII/Papua -->
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
                         <div class="sub-header-text">
@@ -620,61 +497,64 @@
         </div>
     </div>
 
-<script>
-    // Main Dropdown Toggle
-    function toggleDropdown(button) {
-        const content = button.nextElementSibling;
-        const isActive = button.classList.contains('active');
-        
-        // Close other main dropdowns
-        document.querySelectorAll('.dropdown-header').forEach(header => {
-            if (header !== button) {
-                header.classList.remove('active');
-                const otherContent = header.nextElementSibling;
-                if (otherContent) {
-                    otherContent.classList.remove('active');
-                    otherContent.style.maxHeight = null;
+    <script>
+        // Main Dropdown Toggle
+        function toggleDropdown(button) {
+            const content = button.nextElementSibling;
+            const isActive = button.classList.contains('active');
+            
+            // Tutup semua dropdown utama lainnya
+            document.querySelectorAll('.dropdown-header').forEach(header => {
+                if (header !== button) {
+                    header.classList.remove('active');
+                    const otherContent = header.nextElementSibling;
+                    if (otherContent) {
+                        otherContent.classList.remove('active');
+                        otherContent.style.maxHeight = null;
+                    }
                 }
+            });
+            
+            // Toggle dropdown saat ini
+            if (isActive) {
+                button.classList.remove('active');
+                content.classList.remove('active');
+                content.style.maxHeight = null;
+            } else {
+                button.classList.add('active');
+                content.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + "px";
             }
+        }
+
+        // Sub-Dropdown Toggle
+        function toggleSubDropdown(button) {
+            const content = button.nextElementSibling;
+            const isActive = button.classList.contains('active');
+            const parentDropdownContent = button.closest('.dropdown-content');
+
+            if (isActive) {
+                button.classList.remove('active');
+                content.classList.remove('active');
+                content.style.maxHeight = null;
+            } else {
+                button.classList.add('active');
+                content.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+
+            // Update height kontainer induk supaya tidak terpotong
+            if (parentDropdownContent) {
+                parentDropdownContent.style.maxHeight = parentDropdownContent.scrollHeight + "px";
+            }
+        }
+
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+            });
         });
-        
-        if (isActive) {
-            button.classList.remove('active');
-            content.classList.remove('active');
-            content.style.maxHeight = null;
-        } else {
-            button.classList.add('active');
-            content.classList.add('active');
-            content.style.maxHeight = content.scrollHeight + "px";
-        }
-    }
-
-    // Sub-Dropdown Toggle
-    function toggleSubDropdown(button) {
-        const content = button.nextElementSibling;
-        const isActive = button.classList.contains('active');
-        const parentDropdownContent = button.closest('.dropdown-content');
-
-        if (isActive) {
-            button.classList.remove('active');
-            content.classList.remove('active');
-        } else {
-            button.classList.add('active');
-            content.classList.add('active');
-        }
-
-        // Adjust parent container height to prevent clipping nested options
-        if (parentDropdownContent) {
-            parentDropdownContent.style.maxHeight = parentDropdownContent.scrollHeight + "px";
-        }
-    }
-
-    // Smooth scroll handler
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-        });
-    });
-</script>
+    </script>
 </body>
 </html>
