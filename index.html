@@ -256,22 +256,22 @@
             <div class="profile-avatar">
                 <img src="Logo_Mandiri.png" alt="Profile Logo">
             </div>
-            <h1 class="profile-name">MagangHub Batch 2 Kemnaker X Bank Mandiri</h1>
+            <h1 class="profile-name">MagangHub Batch 3 Kemnaker X Bank Mandiri</h1>
             <p class="profile-bio">Lowongan Kerja MagangHub di Bank Mandiri</p>
         </div>
 
         <!-- COUNTDOWN CONTAINER -->
         <div class="countdown" id="countdown">
             <span class="badge">Pendaftaran Dibuka</span>
-            <h2 id="cd-title">Jangan Sampai Kehabisan Kesempatan!</h2>
-            <p class="copy" id="cd-copy">Bangun pengalaman kerja nyata di Bank Mandiri. Pilih posisi yang sesuai, siapkan CV terbaikmu, lalu daftar sebelum waktu habis.</p>
+            <h2 id="cd-title">Your First Step to Shaping the Future</h2>
+            <p class="copy" id="cd-copy">Menjelajahi Indonesia menggunakan Bis, Siapkan diri dan daftar sebelum waktu habis!</p>
             <div class="timer" id="timer">
                 <div class="unit"><b id="d">00</b><span>Hari</span></div>
                 <div class="unit"><b id="h">00</b><span>Jam</span></div>
                 <div class="unit"><b id="m">00</b><span>Menit</span></div>
                 <div class="unit"><b id="s">00</b><span>Detik</span></div>
             </div>
-            <a class="cta" href="#links">Lihat Lowongan &amp; Daftar Sekarang ↓</a>
+            <a class="cta" href="#links">Let's Make it Happen - Daftar Sekarang ↓</a>
         </div>
 
         <!-- Links Container with Dropdowns -->
@@ -639,7 +639,7 @@
     <script>
         /* ====== EDIT HERE ====== */
         const DEADLINE = new Date("2026-11-04T23:59:59+07:00"); // batas akhir pendaftaran
-
+        const START = new Date("2026-10-31T00:00:00+07:00"); // countdown muncul mulai tanggal ini
         // Main dropdown
         function toggleDropdown(button) {
             const content = button.nextElementSibling;
@@ -699,6 +699,7 @@
         const pad = n => String(n).padStart(2, '0');
 
         function tick() {
+            $('countdown').style.display = Date.now() < START ? 'none' : '';
             const diff = DEADLINE - Date.now();
             if (diff <= 0) {
                 $('countdown').classList.add('closed');
