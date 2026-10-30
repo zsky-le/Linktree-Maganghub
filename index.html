@@ -699,8 +699,17 @@
         const pad = n => String(n).padStart(2, '0');
 
         function tick() {
-            $('countdown').style.display = Date.now() < START ? 'none' : '';
-            const diff = DEADLINE - Date.now();
+            const now = Date.now();
+
+            // Belum mulai: tampilkan 00
+            if (now < START) {
+                ['d', 'h', 'm', 's'].forEach(id => $(id).textContent = '00');
+                return;
+            }
+
+            const diff = DEADLINE - now;
+
+            // Sudah lewat deadline
             if (diff <= 0) {
                 $('countdown').classList.add('closed');
                 $('cd-title').textContent = 'Pendaftaran Telah Ditutup';
@@ -708,6 +717,7 @@
                 clearInterval(timer);
                 return;
             }
+
             $('d').textContent = pad(Math.floor(diff / 864e5));
             $('h').textContent = pad(Math.floor(diff % 864e5 / 36e5));
             $('m').textContent = pad(Math.floor(diff % 36e5 / 6e4));
