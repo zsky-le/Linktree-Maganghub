@@ -262,18 +262,19 @@
 
         <!-- COUNTDOWN CONTAINER -->
         <div class="countdown" id="countdown">
-            <span class="badge">Pendaftaran Dibuka</span>
-            <h2 id="cd-title">Jangan Sampai Kehabisan Kesempatan!</h2>
-            <p class="copy" id="cd-copy">Bangun pengalaman kerja nyata di Bank Mandiri. Pilih posisi yang sesuai, siapkan CV terbaikmu, lalu daftar sebelum waktu habis.</p>
+            <span class="badge">Coming Soon!</span>
+            <h2 id="cd-title">Segera Hadir</h2>
+            <p class="copy" id="cd-copy">Bangun pengalaman kerja nyata di Bank Mandiri. Pilih posisi yang sesuai, siapkan CV terbaikmu, dan segera daftar!</p>
             <div class="timer" id="timer">
                 <div class="unit"><b id="d">00</b><span>Hari</span></div>
                 <div class="unit"><b id="h">00</b><span>Jam</span></div>
                 <div class="unit"><b id="m">00</b><span>Menit</span></div>
                 <div class="unit"><b id="s">00</b><span>Detik</span></div>
             </div>
-            <a class="cta" href="#links">Lihat Lowongan &amp; Daftar Sekarang ↓</a>
         </div>
 
+        <!-- LINKS DINONAKTIFKAN SEMENTARA: aktifkan kembali dengan memindahkan isi template ke dalam container. -->
+        <template id="links-draft">
         <!-- Links Container with Dropdowns -->
         <div class="links-container" id="links">
 
@@ -631,11 +632,13 @@
             </div>
 
         </div>
+        </template>
+
     </div>
 
     <script>
         /* ====== EDIT HERE ====== */
-        const DEADLINE = new Date("2026-11-04T23:59:59+07:00"); // batas akhir pendaftaran
+        const DEADLINE = new Date("2026-11-27T23:59:59+07:00"); // GANTI dengan tanggal dan jam countdown yang baru
 
         // Main dropdown
         function toggleDropdown(button) {
@@ -684,12 +687,6 @@
                 content.classList.add('active');
             }
         }
-
-        // Semua link terbuka di tab baru
-        document.querySelectorAll('.dropdown-item').forEach(a => {
-            a.target = '_blank';
-            a.rel = 'noopener';
-        });
 
         // Countdown
         const $ = id => document.getElementById(id);
