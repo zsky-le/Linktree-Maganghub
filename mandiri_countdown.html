@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MagangHub Kemnaker x Bank Mandiri</title>
+<link rel="icon" href="favicon.ico">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:linear-gradient(135deg,#003D79 0%,#003D79 25%,#FFB700 75%,#FF9500 100%) fixed;min-height:100vh;padding:20px;display:flex;justify-content:center;color:#fff}
+.container{width:100%;max-width:500px;padding:30px 0}
+.glass{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.3);border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,.12)}
+
+/* Profile */
+.profile{text-align:center;padding:30px 20px;margin-bottom:20px}
+.avatar{width:100px;height:100px;border-radius:50%;margin:0 auto 15px;overflow:hidden;background:#fff;box-shadow:0 8px 24px rgba(0,61,121,.3)}
+.avatar img{width:100%;height:100%;object-fit:contain}
+.profile h1{font-size:22px;font-weight:600;letter-spacing:-.5px;margin-bottom:8px}
+.profile p{font-size:14px;opacity:.9;line-height:1.4}
+
+/* Countdown */
+.countdown{padding:24px 20px;margin-bottom:28px;text-align:center}
+.badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:5px 12px;border-radius:999px;background:#FFB700;color:#003D79;margin-bottom:12px}
+.countdown h2{font-size:19px;line-height:1.3;margin-bottom:8px}
+.countdown .copy{font-size:13.5px;line-height:1.55;opacity:.92;margin-bottom:18px}
+.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
+.unit{padding:12px 4px;border-radius:14px;background:rgba(0,61,121,.35);border:1px solid rgba(255,255,255,.25)}
+.unit b{display:block;font-size:26px;font-variant-numeric:tabular-nums;line-height:1.1}
+.unit span{font-size:11px;opacity:.85;text-transform:uppercase;letter-spacing:.5px}
+.cta{display:block;padding:14px 16px;border-radius:14px;background:#FFB700;color:#003D79;font-weight:700;font-size:14px;text-decoration:none;transition:transform .25s,box-shadow .25s,background .25s}
+.cta:hover{transform:translateY(-3px);background:#ffc933;box-shadow:0 12px 28px rgba(0,0,0,.25)}
+.closed .timer{display:none}
+
+/* Dropdowns */
+.dropdown-section{margin-bottom:16px}
+.dropdown-header{width:100%;padding:14px 16px;border-radius:16px;cursor:pointer;color:#fff;text-align:left;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;font:inherit;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border:1.5px solid rgba(255,255,255,.3);box-shadow:0 8px 24px rgba(0,0,0,.12);transition:all .3s cubic-bezier(.4,0,.2,1)}
+.dropdown-header:hover{background:rgba(255,255,255,.25);border-color:rgba(255,255,255,.5);transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.2)}
+.dropdown-header.active{background:rgba(255,255,255,.2)}
+.header-text{flex:1}
+.header-title{display:block;font-weight:600;font-size:14px;margin-bottom:2px}
+.header-subtitle{display:block;font-size:12px;opacity:.9}
+.dropdown-arrow,.sub-dropdown-arrow{flex-shrink:0;transition:transform .3s}
+.active>.dropdown-arrow,.active>.sub-dropdown-arrow{transform:rotate(180deg)}
+.dropdown-content,.sub-dropdown-content{display:none;animation:fade .3s ease}
+.dropdown-content.active,.sub-dropdown-content.active{display:block}
+.dropdown-content{margin-top:12px}
+.sub-dropdown-content{margin:0 0 12px 16px}
+.sub-dropdown-header{width:calc(100% - 8px);margin:0 0 12px 8px;padding:12px 16px;border-radius:12px;cursor:pointer;color:#fff;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:10px;font:inherit;font-size:13px;font-weight:600;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);transition:all .3s}
+.sub-dropdown-header:hover,.sub-dropdown-header.active{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.35)}
+.dropdown-item{display:block;margin:0 0 12px 8px;padding:10px 16px;border-radius:12px;color:#fff;font-size:13px;font-weight:500;text-decoration:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);transition:all .3s}
+.dropdown-item:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.35);padding-left:20px}
+.dropdown-item:last-child{margin-bottom:0}
+@keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(max-width:480px){.profile h1{font-size:19px}.unit b{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="profile glass">
+    <div class="avatar"><img src="favicon.ico" alt="Logo"></div>
+    <h1>MagangHub Batch 2 Kemnaker X Bank Mandiri</h1>
+    <p>Lowongan Kerja MagangHub di Bank Mandiri</p>
+  </div>
+
+  <!-- COUNTDOWN CONTAINER -->
+  <div class="countdown glass" id="countdown">
+    <span class="badge">Pendaftaran Dibuka</span>
+    <h2 id="cd-title">Jangan Sampai Kehabisan Kesempatan!</h2>
+    <p class="copy" id="cd-copy">Bangun pengalaman kerja nyata di Bank Mandiri. Pilih posisi yang sesuai, siapkan CV terbaikmu, lalu daftar sebelum waktu habis.</p>
+    <div class="timer" id="timer">
+      <div class="unit"><b id="d">00</b><span>Hari</span></div>
+      <div class="unit"><b id="h">00</b><span>Jam</span></div>
+      <div class="unit"><b id="m">00</b><span>Menit</span></div>
+      <div class="unit"><b id="s">00</b><span>Detik</span></div>
+    </div>
+    <a class="cta" href="#links">Lihat Lowongan &amp; Daftar Sekarang ↓</a>
+  </div>
+
+  <div id="links"></div>
+</div>
+
+<script>
+/* ====== EDIT HERE ====== */
+const DEADLINE = new Date("2026-11-14T23:59:59+07:00"); // ganti dengan batas akhir pendaftaran
+const B = "https://maganghub.kemnaker.go.id/magang-nasional/lowongan/";
+const P = "Retail Funding and Consumer Banking Intern - "; // label diawali "=" dipakai apa adanya
+
+const DATA = [
+ {t:"Kantor Pusat", s:"Posisi di Kantor Pusat Jakarta", g:[
+  {t:"Kantor Pusat Bank Mandiri Jakarta", l:[
+   ["=Accounting Intern","accounting-intern-01a055e9-0728-7196-823a-da60b81788ea"],
+   ["=Commercial Banking Intern","01a055e5-fc3f-70de-ad16-e8a1703f3ee5"],
+   ["=Consumer Banking Intern","01a055e7-9a05-7014-a1a9-e8fcfd897cfa"],
+   ["=Compliance and AML Intern","01a055ea-5832-70cf-9e22-ff5a758f9fff"],
+   ["=Human Capital and Data Intern","01a055eb-4ea1-7255-8efa-f96b46c788e9"],
+   ["=Corporate Secretary Intern","01a055e8-6a74-70b5-8cf5-974c2e7728e9"],
+   ["=Information Technology Intern","01a055ec-5d46-7399-a22a-25f033e99233"],
+   ["=Network & Retail Funding Intern","01a055ed-2df2-712a-a335-3a5601a1c95c"],
+   ["=Special Assets Management Intern","01a055ef-4eb8-72ce-8b1d-7a6278fe0249"],
+   ["=Treasury and International Banking Intern","01a055ef-ea18-705e-b366-a6a6a3391244"]]}]},
+
+ {t:"Regional Office Jabodetabek", s:"Terbuka untuk seluruh jurusan", g:[
+  {t:"Region III/Jakarta 1", l:[["REGION III/Jakarta 1","01a055ee-34fe-70f3-9927-13f8a29c3054"]]},
+  {t:"Region IV/Jakarta 2", l:[
+   ["Area Jakarta Thamrin","retail-funding-dan-consumer-banking-01a0484f-204a-703a-b364-87c581209e63"],
+   ["Area Jakarta Gambir","retail-funding-&-consumer-banking-area-jakarta-gambir-01a05619-6511-7312-8f2f-297514c742eb"],
+   ["Area Kebon Sirih","retail-funding-&-consumer-banking-intern-area-jakarta-kebon-sirih-01a04304-f0cc-7148-b513-be76fef5bcf1"]]},
+  {t:"Region V/Jakarta 3", l:[["REGION V/Jakarta 3","01a056a4-df48-726a-988e-190bf8f36cf2"]]}]},
+
+ {t:"Regional Office non-Jabodetabek", s:"Terbuka untuk seluruh jurusan", g:[
+  {t:"Region I/Sumatera 1", l:[
+   ["Area Rantau Prapat","retail-funding-and-consumer-banking-intern---area-rantauprapat-01a05699-06e4-73ad-bf9d-7aaf7c311305"],
+   ["Area Batam","retail-funding-&-consumer-banking-intern---area-batam-01a042bd-a9b8-727e-bd1f-0e6a36663a68"],
+   ["Area Medan Balaikota","retail-funding-and-consumer-banking-intern---area-medan-balaikota-01a04601-4936-7232-99e4-c9e48239895f"],
+   ["Area Dumai","retail-funding-and-consumer-banking-intern---area-dumai-01a0461f-4936-7232-99e4-c9e48239895f"],
+   ["Area Medan Imam Bonjol","retail-funding-&-consumer-banking-intern---area-medan-imam-bonjol-01a04600-b34f-72f4-b4c1-1ecc11585d5f"],
+   ["Area Pematangsiantar","retail-funding-and-consumer-banking-intern---area-pematangsiantar-01a05722-9ee6-73cf-a4c3-99831f604467"]]},
+  {t:"Region II/Sumatera 2", l:[
+   ["Pangkalpinang","retail-funding-and-consumer-banking-intern---area-pangkalpinang-01a041f2-45e3-73aa-b984-4a12fee6eb85"],
+   ["Area Bengkulu","retail-funding-and-consumer-banking-intern-area-bengkulu-01a05618-d0af-7339-94b8-3adf5386da72"],
+   ["Area Padang","retail-funding-and-consumer-banking-intern---area-padang-01a05621-d153-7283-9e67-b9fc9ce9d025"]]},
+  {t:"Region VI/Jawa 1", l:[
+   ["=Retail Funding & Consumer Banking Intern - Region VI","retail-funding-&-consumer-banking-intern---region-vi-01a047d7-daf2-7362-bbec-98fcd2d5a9a1"],
+   ["Area Bandung Surapati","retail-funding-&-consumer-banking-intern---area-bandung-surapati-01a047d8-8186-73bc-8c9e-aaa376fdb097"],
+   ["Area Bandung Braga","retail-funding-&-consumer-banking-intern---area-bandung-braga-01a047da-375b-7176-9593-fa7f35d534e0"],
+   ["Area Bandung Asia Afrika","retail-funding-&-consumer-banking-intern---area-bandung-asia-afrika-01a047d9-44f2-71f2-aebe-0e133c66af07"],
+   ["Area Sukabumi","retail-funding-and-consumer-banking-intern---area-sukabumi-01a047f8-f155-708f-9503-99f1773e0233"]]},
+  {t:"Region VII/Jawa 2", l:[
+   ["=Retail Funding & Consumer Banking - Region VII / Jawa 2","retail-funding-&-consumer-banking---region-vii--jawa-2-01a0475c-20c1-73df-9e81-370e53f4742c"],
+   ["Area Solo","retail-funding-and-consumer-banking-intern---area-solo-01a04149-4140-7375-b930-03f3caa40428"],
+   ["Area Semarang Pemuda","retail-fuding-&-consumer-banking---area-semarang-pemuda-01a0475d-0830-7227-8f4f-0a537fb3fde6"],
+   ["Area Semarang Pahlawan","retail-funding-&-consumer-banking-intern-2---area-semarang-pahlawan-01a051df-1aa7-733b-a93e-669803a8446c"],
+   ["Area Purwokerto","retail-funding-and-consumer-banking-intern---area-purwokerto-01a041aa-f2c8-7011-97d9-3c0a1219dd88"]]},
+  {t:"Region VIII/Jawa 3", l:[
+   ["=Retail Funding & Consumer Banking Intern - Region VIII/Jawa 3","retail-funding-&-consumer-banking-intern---region-viiijawa-3-01a047d4-90eb-72f7-b87c-c11f700f116d"],
+   ["Area Surabaya Pemuda","retail-funding-&-consumer-banking-intern---area-surabaya-pemuda-01a04861-2c79-7295-9873-cc99af8f2acb"],
+   ["Area Surabaya Niaga","retail-funding-&-consumer-banking-intern---area-surabaya-niaga-01a04860-8cdb-7108-983a-a9f23b790a89"],
+   ["Area Surabaya Gentengkali","retail-funding-&-consumer-banking-intern-area-surabaya-gentengkali-01a04898-7b94-7111-9554-bca1212ae049"]]},
+  {t:"Region IX/Kalimantan", l:[
+   ["Area Balikpapan","retail-funding-and-consumer-banking-intern---area-balikpapan-01a03dfb-5c0f-73c1-875e-ae766404dce8"],
+   ["Area Banjarmasin","retail-funding-&-consumer-banking-intern---area-banjarmasin-01a04724-2177-71af-ba59-669ce22ec02e"],
+   ["Area Samarinda","retail-funding-&-consumer-banking-intern---area-samarinda-01a04735-fe68-708a-ac0c-73ec8afd9b3e"],
+   ["Area Palangkaraya","retail-funding-&-consumer-banking-intern---area-palangkaraya-01a05799-4279-715f-b413-171e41e7adeb"]]},
+  {t:"Region X/Sulawesi", l:[
+   ["Area Palu","retail-funding-and-consumer-banking-intern---area-palu-01a05306-8dc9-71c9-baf3-8a3d75b61747"]]},
+  {t:"Region XI/Bali dan Nusa Tenggara", l:[
+   ["Area Kuta","retail-funding-and-consumer-banking-intern---area-kuta-bali-01a05696-62a5-700c-9d3b-6198e23ea096"],
+   ["Area Mataram","retail-funding-&-consumer-banking-intern---area-mataram-01a0578e-f5c5-73fe-8f6f-852f4fbb88f7"]]},
+  {t:"Region XII/Papua", l:[
+   ["Area Papua","retail-funding-and-consumer-banking-intern---region-xiipapua-01a04762-880e-715d-a429-1c46287c0a0c"],
+   ["Area Jayapura","retail-funding-&-consumer-banking-intern---area-jayapura-01a0575d-015d-7125-ace4-8857eb22d9ec"]]}]}
+];
+/* ======================== */
+
+const $ = id => document.getElementById(id);
+const el = (tag, cls) => { const e = document.createElement(tag); e.className = cls; return e; };
+
+function toggle(btn, panel, scope, sel){
+  const open = !btn.classList.contains('active');
+  scope.querySelectorAll(sel).forEach(b => {
+    b.classList.remove('active'); b.setAttribute('aria-expanded','false');
+    b.nextElementSibling.classList.remove('active');
+  });
+  if(open){ btn.classList.add('active'); btn.setAttribute('aria-expanded','true'); panel.classList.add('active'); }
+}
+
+const root = $('links');
+DATA.forEach(sec => {
+  const s = el('div','dropdown-section');
+  const h = el('button','dropdown-header');
+  h.setAttribute('aria-expanded','false');
+  h.innerHTML = `<div class="header-text"><span class="header-title">${sec.t}</span><span class="header-subtitle">${sec.s}</span></div><span class="dropdown-arrow">▼</span>`;
+  const c = el('div','dropdown-content');
+  sec.g.forEach(g => {
+    const sh = el('button','sub-dropdown-header');
+    sh.setAttribute('aria-expanded','false');
+    sh.innerHTML = `<span>${g.t}</span><span class="sub-dropdown-arrow">▼</span>`;
+    const sc = el('div','sub-dropdown-content');
+    g.l.forEach(([name, slug]) => {
+      const a = el('a','dropdown-item');
+      a.href = B + slug; a.target = '_blank'; a.rel = 'noopener';
+      a.textContent = name[0] === '=' ? name.slice(1) : P + name;
+      sc.appendChild(a);
+    });
+    sh.onclick = () => toggle(sh, sc, c, '.sub-dropdown-header');
+    c.append(sh, sc);
+  });
+  h.onclick = () => toggle(h, c, root, '.dropdown-section > .dropdown-header');
+  s.append(h, c); root.appendChild(s);
+});
+
+/* Countdown */
+const pad = n => String(n).padStart(2,'0');
+function tick(){
+  const diff = DEADLINE - Date.now();
+  if(diff <= 0){
+    $('countdown').classList.add('closed');
+    $('cd-title').textContent = 'Pendaftaran Telah Ditutup';
+    $('cd-copy').textContent = 'Terima kasih atas antusiasmu. Pantau terus informasi lowongan berikutnya!';
+    return clearInterval(timer);
+  }
+  $('d').textContent = pad(Math.floor(diff/864e5));
+  $('h').textContent = pad(Math.floor(diff%864e5/36e5));
+  $('m').textContent = pad(Math.floor(diff%36e5/6e4));
+  $('s').textContent = pad(Math.floor(diff%6e4/1e3));
+}
+const timer = setInterval(tick, 1000); tick();
+
+document.querySelector('.cta').addEventListener('click', e => {
+  e.preventDefault(); root.scrollIntoView({behavior:'smooth'});
+});
+</script>
+</body>
+</html>
