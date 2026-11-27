@@ -263,17 +263,17 @@
             <p class="profile-bio">Lowongan Kerja MagangHub di Bank Mandiri</p>
         </div>
 
-        <!-- COMING SOON: tampilan sementara sebelum pendaftaran dibuka -->
-        <div class="countdown coming-soon">
+        <!-- COMING SOON DISIMPAN: hapus hidden jika ingin menampilkan lagi -->
+        <div class="countdown coming-soon" hidden>
             <span class="badge">COMING SOON!</span>
             <h2>Segera Hadir</h2>
             <p class="copy">Bangun pengalaman kerja nyata di Bank Mandiri. Pilih posisi yang sesuai, siapkan CV terbaikmu, dan segera daftar!</p>
         </div>
 
-        <!-- COUNTDOWN DISIMPAN: ubah hidden menjadi aktif jika ingin menampilkan countdown lagi -->
-        <div class="countdown" id="countdown" hidden>
-            <span class="badge">Pendaftaran Dibuka</span>
-            <h2 id="cd-title">Jangan Sampai Kehabisan Kesempatan!</h2>
+        <!-- Countdown pendaftaran -->
+        <div class="countdown" id="countdown">
+            <span class="badge" id="cd-badge">Pendaftaran Dibuka</span>
+            <h2 id="cd-title">Kesempatan datang dua kali tapi.. Jangan Sampai Kehabisan Kesempatan!</h2>
             <p class="copy" id="cd-copy">Bangun pengalaman kerja nyata di Bank Mandiri. Pilih posisi yang sesuai, siapkan CV terbaikmu, lalu daftar sebelum waktu habis.</p>
             <div class="timer" id="timer">
                 <div class="unit"><b id="d">00</b><span>Hari</span></div>
@@ -283,8 +283,6 @@
             </div>
         </div>
 
-        <!-- LINKS DINONAKTIFKAN SEMENTARA: aktifkan kembali dengan memindahkan isi template ke dalam container. -->
-        <template id="links-draft">
         <!-- Links Container with Dropdowns -->
         <div class="links-container" id="links">
 
@@ -297,20 +295,27 @@
                     <span class="dropdown-arrow">▼</span>
                 </button>
                 <div class="dropdown-content">
-                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/accounting-intern-01a055e9-0728-7196-823a-da60b81788ea" class="dropdown-item">Accounting Intern</a>
-                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a055e5-fc3f-70de-ad16-e8a1703f3ee5" class="dropdown-item">Commercial Banking Intern</a>
-                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a055e7-9a05-7014-a1a9-e8fcfd897cfa" class="dropdown-item">Compliance and AML Intern</a>
-                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a055ea-5832-70cf-9e22-ff5a758f9fff" class="dropdown-item">Consumer Banking Intern</a>
-                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a055ea-5832-70cf-9e22-ff5a758f9fff" class="dropdown-item">Corporate Banking Intern</a>
-                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a055eb-4ea1-7255-8efa-f96b46c788e9" class="dropdown-item">Corporate Secretary &amp; Digital Marketing Intern</a>
-                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a055e8-6a74-70b5-8cf5-974c2e7728e9" class="dropdown-item">Government &amp; Institutional Intern</a>
-                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a055ec-5d46-7399-a22a-25f033e99233" class="dropdown-item">Government Project Intern</a>
-                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a055ec-5d46-7399-a22a-25f033e99233" class="dropdown-item">Government Project Intern 2</a>
-                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a055ed-2df2-712a-a335-3a5601a1c95c" class="dropdown-item">Human Capita &amp; Data Intern</a>
-                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a055ef-4eb8-72ce-8b1d-7a6278fe0249" class="dropdown-item">Information Technology Intern</a>
-                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a055ef-4eb8-72ce-8b1d-7a6278fe0249" class="dropdown-item">Information Audit Intern</a>
-                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a055ef-4eb8-72ce-8b1d-7a6278fe0249" class="dropdown-item">Operations Intern</a>
-                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a055ef-ea18-705e-b366-a6a6a3391244" class="dropdown-item">Treasury and International Banking Intern</a>
+                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/commercial-banking-intern-01a21635-2e8d-7278-8a04-70974774bc8d" class="dropdown-item">Commercial Banking Intern</a>
+                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/consumer-banking-intern-01a2149d-dce6-7012-9218-6b99f161adb2" class="dropdown-item">Consumer Banking Intern</a>
+                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/corporate-banking-intern-01a214a2-d5d1-7031-99f4-957e5b5c1f3c" class="dropdown-item">Corporate Banking Intern</a>
+                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/corporate-relations-intern-01a214bb-989a-7100-b48e-adfbf0dae11c" class="dropdown-item">Corporate Relations Intern</a>
+                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/government-&-institutional-intern-01a214ed-b105-72dc-86e1-74dbc42ed565" class="dropdown-item">Government &amp; Institutional Intern</a>
+                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/human-capital-&-data-intern-01a21499-ba49-702f-b5e0-0832a01e045e" class="dropdown-item">Human Capital &amp; Data Intern</a>
+                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/network-&-retail-funding-intern-01a214ab-4f10-7014-90b9-6c1d23ced085" class="dropdown-item">Network &amp; Retail Funding Intern</a>
+                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/risk-management-intern-01a215f6-9f92-73c7-a330-2a3d83fc8f43" class="dropdown-item">Risk Management Intern</a>
+                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/special-assets-management-intern-01a214ae-db97-7054-a151-5160f4d9e6f7" class="dropdown-item">Special Assets Management Intern</a>
+                    <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/treasury-&-international-banking-intern-01a214b1-43eb-7396-96af-e7bb79e3b389" class="dropdown-item">Treasury &amp; International Banking Intern</a>
+
+                    <!-- BELUM ADA LINK
+                    <a href="URL" class="dropdown-item">Accounting Intern</a>
+                    <a href="URL" class="dropdown-item">Compliance and AML Intern</a>
+                    <a href="URL" class="dropdown-item">Corporate Secretary &amp; Digital Marketing Intern</a>
+                    <a href="URL" class="dropdown-item">Government Project Intern</a>
+                    <a href="URL" class="dropdown-item">Government Project Intern 2</a>
+                    <a href="URL" class="dropdown-item">Information Technology Intern</a>
+                    <a href="URL" class="dropdown-item">Information Audit Intern</a>
+                    <a href="URL" class="dropdown-item">Operations Intern</a>
+                    -->
                 </div>
             </div>
 
@@ -325,13 +330,33 @@
                 </button>
                 <div class="dropdown-content">
 
-                    <!-- Region III/Jakarta 1 -->
+                    <!-- Seluruh Region Jabodetabek -->
+                    <!-- BELUM ADA LINK: Credit Cards Business Intern
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
                         <div class="sub-header-text"><div class="sub-header-title">Credit Cards Business Intern</div></div>
                         <span class="sub-dropdown-arrow">▼</span>
                     </button>
                     <div class="sub-dropdown-content">
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a055ee-34fe-70f3-9927-13f8a29c3054" class="dropdown-item">Credit Cards Business Intern - Seluruh Region Jabodetabek (Region III, IV, V)</a>
+                        <a href="URL" class="dropdown-item">Credit Cards Business Intern - Seluruh Region Jabodetabek (Region III, IV, V)</a>
+                    </div>
+                    -->
+
+                    <!-- Region III/Jakarta 1 -->
+                    <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
+                        <div class="sub-header-text"><div class="sub-header-title">Region III/Jakarta 1</div></div>
+                        <span class="sub-dropdown-arrow">▼</span>
+                    </button>
+                    <div class="sub-dropdown-content">
+                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern---area-cilegon-01a21737-b66d-7214-a042-a06f3b3e3e0f" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Cilegon</a>
+                        </div>
+
+                    <!-- Region IV/Jakarta 2 -->
+                    <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
+                        <div class="sub-header-text"><div class="sub-header-title">Region IV/Jakarta 2</div></div>
+                        <span class="sub-dropdown-arrow">▼</span>
+                    </button>
+                    <div class="sub-dropdown-content">
+                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/transaction-banking-wholesale-intern---region-ivjakarta-2-01a21796-ed1a-737b-9596-0023dffbd4d0" class="dropdown-item">Transaction Banking Wholesale Intern - Region IV/Jakarta 2</a>
                     </div>
 
                     <!-- Region V/Jakarta 3 -->
@@ -340,9 +365,10 @@
                         <span class="sub-dropdown-arrow">▼</span>
                     </button>
                     <div class="sub-dropdown-content">
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/01a056a4-df48-726a-988e-190bf8f36cf2" class="dropdown-item">Retail Funding and Consumer Banking Intern -REGION V/ Jakarta 3</a>
+                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern---region-vjakarta-3-01a2178c-9ae9-71f2-a806-7e7e2ec0604d" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Region V/Jakarta 3</a>
+                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/transaction-banking-wholesale-intern---region-vjakarta-3-01a2179c-09ed-71dd-a676-ac55e1682c23" class="dropdown-item">Transaction Banking Wholesale Intern - Region V/Jakarta 3</a>
+                        <!-- <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Depok</a> -->
                     </div>
-
                 </div>
             </div>
 
@@ -357,121 +383,131 @@
                 </button>
                 <div class="dropdown-content">
 
-                <!-- Region I/Sumatera 1 -->
-                <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
-                    <div class="sub-header-text"><div class="sub-header-title">Region I/Sumatera 1</div></div>
-                    <span class="sub-dropdown-arrow">▼</span>
-                </button>
-                <div class="sub-dropdown-content">
-                    <!-- NEW: nested dropdown, placed inside sub-dropdown-content -->
-                    <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
-                        <span>Credit Cards Business Intern</span>
-                        <span class="sub2-dropdown-arrow">▼</span>
+                    <!-- Region I/Sumatera 1 -->
+                    <!-- BELUM ADA LINK: Region I/Sumatera 1
+                    <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
+                        <div class="sub-header-text"><div class="sub-header-title">Region I/Sumatera 1</div></div>
+                        <span class="sub-dropdown-arrow">▼</span>
                     </button>
-                    <div class="sub2-dropdown-content">
-                        <a href="URL" class="dropdown-item">Credit Cards Business Intern - Area Pematang Siantar</a>
+                    <div class="sub-dropdown-content">
+                        <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
+                            <span>Credit Cards Business Intern</span>
+                            <span class="sub2-dropdown-arrow">▼</span>
+                        </button>
+                        <div class="sub2-dropdown-content">
+                            <a href="URL" class="dropdown-item">Credit Cards Business Intern - Area Pematang Siantar</a>
+                        </div>
+                        <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
+                            <span>Retail Funding &amp; Consumer Banking Intern</span>
+                            <span class="sub2-dropdown-arrow">▼</span>
+                        </button>
+                        <div class="sub2-dropdown-content">
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Pematang Siantar</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Medan Balaikota</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Batam</a>
+                        </div>
                     </div>
-                    <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
-                        <span>Retail Funding and Consumer Banking Intern</span>
-                        <span class="sub2-dropdown-arrow">▼</span>
-                    </button>
-                    <div class="sub2-dropdown-content">
-                        <a href="URL" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Pematang Siantar</a>
-                        <a href="URL" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Medan Balaikota</a>
-                        <a href="URL" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Batam</a>
-                    </div>
-                </div>
+                    -->
 
                     <!-- Region II/Sumatera 2 -->
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
-                    <div class="sub-header-text"><div class="sub-header-title">Region II/Sumatera 2</div></div>
-                    <span class="sub-dropdown-arrow">▼</span>
-                </button>
-                <div class="sub-dropdown-content">
-                    <!-- NEW: nested dropdown, placed inside sub-dropdown-content -->
-                    <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
-                        <span>Credit Cards Business Intern</span>
-                        <span class="sub2-dropdown-arrow">▼</span>
+                        <div class="sub-header-text"><div class="sub-header-title">Region II/Sumatera 2</div></div>
+                        <span class="sub-dropdown-arrow">▼</span>
                     </button>
-                    <div class="sub2-dropdown-content">
-                        <a href="URL" class="dropdown-item">Credit Cards Business Intern - Area Jambi 1</a>
-                        <a href="URL" class="dropdown-item">Credit Cards Business Intern - Area Jambi 2</a>
+                    <div class="sub-dropdown-content">
+                        <!-- BELUM ADA LINK: Credit Cards Business Intern
+                        <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
+                            <span>Credit Cards Business Intern</span>
+                            <span class="sub2-dropdown-arrow">▼</span>
+                        </button>
+                        <div class="sub2-dropdown-content">
+                            <a href="URL" class="dropdown-item">Credit Cards Business Intern - Area Jambi 1</a>
+                            <a href="URL" class="dropdown-item">Credit Cards Business Intern - Area Jambi 2</a>
+                        </div>
+                        -->
+                        <!-- BELUM ADA LINK: Personal Auto Loan Intern
+                        <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
+                            <span>Personal Auto Loan Intern</span>
+                            <span class="sub2-dropdown-arrow">▼</span>
+                        </button>
+                        <div class="sub2-dropdown-content">
+                            <a href="URL" class="dropdown-item">Personal Auto Loan Intern - Region II/Sumatera 2</a>
+                            <a href="URL" class="dropdown-item">Personal Auto Loan Intern - Area Jambi 1</a>
+                        </div>
+                        -->
+                        <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
+                            <span>Retail Funding &amp; Consumer Banking Intern</span>
+                            <span class="sub2-dropdown-arrow">▼</span>
+                        </button>
+                        <div class="sub2-dropdown-content">
+                            <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-internship---area-jambi-01a2189c-8424-7375-9e91-543605733f6b" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Jambi</a>
+                            <!-- BELUM ADA LINK
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Region II/Sumatera 2</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Jambi 1</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Jambi 2</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Palembang Arief</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Palembang Sudirman 1</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Palembang Sudirman 2</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Lampung</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Bengkulu</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Bengkulu 2</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Pangkal Pinang</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Palangkaraya</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Padang</a>
+                            -->
+                        </div>
                     </div>
-                     <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
-                        <span>Personal Auto Loan Intern</span>
-                        <span class="sub2-dropdown-arrow">▼</span>
-                    </button>
-                    <div class="sub2-dropdown-content">
-                        <a href="URL" class="dropdown-item">Personal Auto Loan Intern - Region II/Sumatera 2</a>
-                        <a href="URL" class="dropdown-item">Personal Auto Loan Intern - Area Jambi 1</a>
-                    </div>
-                    <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
-                        <span>Retail Funding and Consumer Banking Intern</span>
-                        <span class="sub2-dropdown-arrow">▼</span>
-                    </button>
-                    <div class="sub2-dropdown-content">
-                        <a href="URL" class="dropdown-item">Retail Funding and Consumer Banking Intern - Region II/Sumatera 2</a>
-                        <a href="URL" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Jambi 1</a>
-                        <a href="URL" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Jambi 2</a>
-                        <a href="URL" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Palembang Arief</a>
-                        <a href="URL" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Palembang Sudirman 1</a>
-                        <a href="URL" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Palembang Sudirman 2</a>
-                        <a href="URL" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Lampung</a>
-                        <a href="URL" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Bengkulu</a>
-                        <a href="URL" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Bengkulu 2</a>
-                        <a href="URL" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Pangkal Pinang</a>
-                        <a href="URL" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Palangkaraya</a>
-                        <a href="URL" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Padang</a>
-                        
-                    </div>
-                </div>
 
                     <!-- Region VI/Jawa 1 -->
+                    <!-- BELUM ADA LINK: Region VI/Jawa 1
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
                         <div class="sub-header-text"><div class="sub-header-title">Region VI/Jawa 1</div></div>
                         <span class="sub-dropdown-arrow">▼</span>
                     </button>
                     <div class="sub-dropdown-content">
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern---region-vi-01a047d7-daf2-7362-bbec-98fcd2d5a9a1" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Cirebon</a>
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern---area-bandung-surapati-01a047d8-8186-73bc-8c9e-aaa376fdb097" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Karawang</a>
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-and-consumer-banking-intern---area-sukabumi-01a047f8-f155-708f-9503-99f1773e0233" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Sukabumi</a>
+                        <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Tasikmalaya</a>
+                        <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Cirebon</a>
+                        <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Karawang</a>
+                        <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Sukabumi</a>
                     </div>
+                    -->
 
                     <!-- Region VII/Jawa 2 -->
+                    <!-- BELUM ADA LINK: Region VII/Jawa 2
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
-                    <div class="sub-header-text"><div class="sub-header-title">Region VII/Jawa 2</div></div>
-                    <span class="sub-dropdown-arrow">▼</span>
-                </button>
-                <div class="sub-dropdown-content">
-                    <!-- NEW: nested dropdown, placed inside sub-dropdown-content -->
-                    <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
-                        <span>Credit Cards Business Intern</span>
-                        <span class="sub2-dropdown-arrow">▼</span>
-                    </button>
-                    <div class="sub2-dropdown-content">
-                        <a href="URL" class="dropdown-item">Credit Cards Business Intern - Region VII/Jawa 2</a>
-                        <a href="URL" class="dropdown-item">Credit Cards Business Intern - Area Magelang</a>
-                    </div>
-                    <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
-                        <div class="sub-header-text"><div class="sub-header-title">Retail Funding & Consumer Banking Intern</div></div>
+                        <div class="sub-header-text"><div class="sub-header-title">Region VII/Jawa 2</div></div>
                         <span class="sub-dropdown-arrow">▼</span>
                     </button>
                     <div class="sub-dropdown-content">
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking---region-vii--jawa-2-01a0475c-20c1-73df-9e81-370e53f4742c" class="dropdown-item">Retail Funding &amp; Consumer Banking - Area Yogyakarta</a>
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-fuding-&-consumer-banking---area-semarang-pemuda-01a0475d-0830-7227-8f4f-0a537fb3fde6" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Kudus</a>
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern-2---area-semarang-pahlawan-01a051df-1aa7-733b-a93e-669803a8446c" class="dropdown-item">Retail Funding and Consumer Banking Intern - Region VII/Jawa 2</a>
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern-2---area-semarang-pahlawan-01a051df-1aa7-733b-a93e-669803a8446c" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Semarang Pahlawan</a>
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern-2---area-semarang-pahlawan-01a051df-1aa7-733b-a93e-669803a8446c" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Magelang</a>
+                        <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
+                            <span>Credit Cards Business Intern</span>
+                            <span class="sub2-dropdown-arrow">▼</span>
+                        </button>
+                        <div class="sub2-dropdown-content">
+                            <a href="URL" class="dropdown-item">Credit Cards Business Intern - Region VII/Jawa 2</a>
+                            <a href="URL" class="dropdown-item">Credit Cards Business Intern - Area Magelang</a>
+                        </div>
+                        <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
+                            <span>Retail Funding &amp; Consumer Banking Intern</span>
+                            <span class="sub2-dropdown-arrow">▼</span>
+                        </button>
+                        <div class="sub2-dropdown-content">
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Tegal</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Yogyakarta</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Kudus</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Region VII/Jawa 2</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Semarang Pahlawan</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Magelang</a>
+                        </div>
+                        <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
+                            <span>Retail Funding &amp; Consumer Banking Mandarin Speaker Intern</span>
+                            <span class="sub2-dropdown-arrow">▼</span>
+                        </button>
+                        <div class="sub2-dropdown-content">
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Mandarin Speaker Intern - Area Semarang Pahlawan</a>
+                        </div>
                     </div>
-                    <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
-                        <div class="sub-header-text"><div class="sub-header-title">Retail Funding & Consumer Banking Mandarin Speaker Intern</div></div>
-                        <span class="sub-dropdown-arrow">▼</span>
-                    </button>
-                    <div class="sub-dropdown-content">
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking---region-vii--jawa-2-01a0475c-20c1-73df-9e81-370e53f4742c" class="dropdown-item">Retail Funding &amp; Consumer Banking (Mandarin Speaker) - Area Semarang Pahlawan</a>
-                    </div>
-                </div>
-
+                    -->
 
                     <!-- Region VIII/Jawa 3 -->
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
@@ -479,94 +515,122 @@
                         <span class="sub-dropdown-arrow">▼</span>
                     </button>
                     <div class="sub-dropdown-content">
-                    <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
-                        <div class="sub-header-text"><div class="sub-header-title">Retail Funding & Consumer Banking Intern</div></div>
-                        <span class="sub-dropdown-arrow">▼</span>
-                    </button>
-                    <div class="sub-dropdown-content">
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking---region-vii--jawa-2-01a0475c-20c1-73df-9e81-370e53f4742c" class="dropdown-item">Retail Funding &amp; Consumer Banking - Area Malang</a>
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-fuding-&-consumer-banking---area-semarang-pemuda-01a0475d-0830-7227-8f4f-0a537fb3fde6" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Madiun</a>
+                        <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
+                            <span>Retail Funding &amp; Consumer Banking Intern</span>
+                            <span class="sub2-dropdown-arrow">▼</span>
+                        </button>
+                        <div class="sub2-dropdown-content">
+                            <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern---area-gresik-01a2171c-ec1a-7009-86e7-a0ea5036b056" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Gresik</a>
+                            <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern---area-jember-01a21738-f153-7153-9480-edb09fa0c433" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Jember</a>
+                            <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern---area-kediri-01a20c54-1904-7171-8fee-f5c0a4bfdff4" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Kediri</a>
+                            <!-- BELUM ADA LINK
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Malang</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Madiun</a>
+                            -->
+                        </div>
+                        <!-- BELUM ADA LINK: Retail Funding &amp; Consumer Banking Mandarin Speaker Intern
+                        <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
+                            <span>Retail Funding &amp; Consumer Banking Mandarin Speaker Intern</span>
+                            <span class="sub2-dropdown-arrow">▼</span>
+                        </button>
+                        <div class="sub2-dropdown-content">
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Mandarin Speaker Intern - Region VIII/Jawa 3</a>
+                        </div>
+                        -->
+                        <!-- BELUM ADA LINK: Retail Funding &amp; Consumer Banking Japanese Speaker Intern
+                        <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
+                            <span>Retail Funding &amp; Consumer Banking Japanese Speaker Intern</span>
+                            <span class="sub2-dropdown-arrow">▼</span>
+                        </button>
+                        <div class="sub2-dropdown-content">
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Japanese Speaker Intern - Region VIII/Jawa 3</a>
+                        </div>
+                        -->
                     </div>
-                    <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
-                        <div class="sub-header-text"><div class="sub-header-title">Retail Funding & Consumer Banking Mandarin Speaker Intern</div></div>
-                        <span class="sub-dropdown-arrow">▼</span>
-                    </button>
-                    <div class="sub-dropdown-content">
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking---region-vii--jawa-2-01a0475c-20c1-73df-9e81-370e53f4742c" class="dropdown-item">Retail Funding &amp; Consumer Banking (Mandarin Speaker) - Region VIII/Jawa 3</a>
-                    </div>
-                    <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
-                        <div class="sub-header-text"><div class="sub-header-title">Retail Funding & Consumer Banking Japanese Speaker Intern</div></div>
-                        <span class="sub-dropdown-arrow">▼</span>
-                    </button>
-                    <div class="sub-dropdown-content">
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking---region-vii--jawa-2-01a0475c-20c1-73df-9e81-370e53f4742c" class="dropdown-item">Retail Funding &amp; Consumer Banking (Japanese Speaker) - Region VIII/Jawa 3</a>
-                    </div>
-                    </div>
-                    
+
                     <!-- Region IX/Kalimantan -->
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
                         <div class="sub-header-text"><div class="sub-header-title">Region IX/Kalimantan</div></div>
                         <span class="sub-dropdown-arrow">▼</span>
                     </button>
                     <div class="sub-dropdown-content">
-                    <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
-                        <div class="sub-header-text"><div class="sub-header-title">Credit Cards Business Intern</div></div>
-                        <span class="sub-dropdown-arrow">▼</span>
-                    </button>
-                    <div class="sub-dropdown-content">
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking---region-vii--jawa-2-01a0475c-20c1-73df-9e81-370e53f4742c" class="dropdown-item">Credit Cards Business Intern - Area Palangkaraya</a>
-                    </div>
-                    <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
-                        <div class="sub-header-text"><div class="sub-header-title">Retail Funding & Consumer Banking Intern</div></div>
-                        <span class="sub-dropdown-arrow">▼</span>
-                    </button>
-                    <div class="sub-dropdown-content">
-                        <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking---region-vii--jawa-2-01a0475c-20c1-73df-9e81-370e53f4742c" class="dropdown-item">Transaction Intern - Area Palangkaraya</a>
-                    </div>
-                    </div>
-
-                    <!-- Region X/Sulawesi -->
-                    <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
-                        <div class="sub-header-text"><div class="sub-header-title">Region X/Sulawesi</div></div>
-                        <span class="sub-dropdown-arrow">▼</span>
-                    </button>
-                    <div class="sub-dropdown-content">
-
-                        <!-- Nested 1 -->
                         <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
                             <span>Credit Cards Business Intern</span>
                             <span class="sub2-dropdown-arrow">▼</span>
                         </button>
                         <div class="sub2-dropdown-content">
-                            <a href="URL_HERE" class="dropdown-item">Credit Cards Business Intern - Region X / Sulawesi dan Maluku</a>
-                            <a href="URL_HERE" class="dropdown-item">Credit Cards Business Intern - Area Makassar Kartini</a>
-                            <a href="URL_HERE" class="dropdown-item">Credit Cards Business Intern - Area Makassar Kartini 2</a>
+                            <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/credit-cards-business-intern---area-pontianak-01a217b4-2493-7221-94fc-fe85833fd9f1" class="dropdown-item">Credit Cards Business Intern - Area Pontianak</a>
                         </div>
-
-                        <!-- Nested 2 -->
+                        <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
+                            <span>Personal Loan Group Intern</span>
+                            <span class="sub2-dropdown-arrow">▼</span>
+                        </button>
+                        <div class="sub2-dropdown-content">
+                            <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/personal-loan-group---area-pontianak-01a217b8-19d9-70e9-8f50-748c1d21757a" class="dropdown-item">Personal Loan Group Intern - Area Pontianak</a>
+                        </div>
                         <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
                             <span>Retail Funding &amp; Consumer Banking Intern</span>
                             <span class="sub2-dropdown-arrow">▼</span>
                         </button>
                         <div class="sub2-dropdown-content">
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Region X / Sulawesi dan Maluku</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Makassar Kartini</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Makassar Kartini 2</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Makassar Ratulangi 2</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Sam Ratulangi</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Maluku</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Manado</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Kendari</a>
+                            <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern---area-pontianak-01a217b5-3e61-705e-9d0f-4ccdc667c0d5" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Pontianak</a>
                         </div>
+                        <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
+                            <span>Transaction Banking Wholesale Intern</span>
+                            <span class="sub2-dropdown-arrow">▼</span>
+                        </button>
+                        <div class="sub2-dropdown-content">
+                            <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/transaction-banking-wholesale-intern---area-pontianak-01a217b3-7fee-73b6-9269-f819926316fe" class="dropdown-item">Transaction Banking Wholesale Intern - Area Pontianak</a>
+                        </div>
+                        <!-- BELUM ADA LINK: Area Palangkaraya
+                            <a href="URL" class="dropdown-item">Credit Cards Business Intern - Area Palangkaraya</a>
+                            <a href="URL" class="dropdown-item">Transaction Intern - Area Palangkaraya</a>
+                        -->
+                    </div>
 
-                        <!-- Nested 3 -->
+                    <!-- Region X/Sulawesi dan Maluku -->
+                    <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
+                        <div class="sub-header-text"><div class="sub-header-title">Region X/Sulawesi dan Maluku</div></div>
+                        <span class="sub-dropdown-arrow">▼</span>
+                    </button>
+                    <div class="sub-dropdown-content">
+                        <!-- BELUM ADA LINK: Credit Cards Business Intern
+                        <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
+                            <span>Credit Cards Business Intern</span>
+                            <span class="sub2-dropdown-arrow">▼</span>
+                        </button>
+                        <div class="sub2-dropdown-content">
+                            <a href="URL" class="dropdown-item">Credit Cards Business Intern - Region X / Sulawesi dan Maluku</a>
+                            <a href="URL" class="dropdown-item">Credit Cards Business Intern - Area Makassar Kartini</a>
+                            <a href="URL" class="dropdown-item">Credit Cards Business Intern - Area Makassar Kartini 2</a>
+                        </div>
+                        -->
+                        <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
+                            <span>Retail Funding &amp; Consumer Banking Intern</span>
+                            <span class="sub2-dropdown-arrow">▼</span>
+                        </button>
+                        <div class="sub2-dropdown-content">
+                            <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern---area-parepare-01a217ce-5653-7162-b974-9dba8ba5b38c" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Pare-pare</a>
+                            <!-- BELUM ADA LINK
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Region X / Sulawesi dan Maluku</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Makassar Kartini</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Makassar Kartini 2</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Makassar Ratulangi 2</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Sam Ratulangi</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Maluku</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Manado</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Kendari</a>
+                            -->
+                        </div>
+                        <!-- BELUM ADA LINK: Retail Funding &amp; Consumer Banking Mandarin Speaker Intern
                         <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
                             <span>Retail Funding &amp; Consumer Banking Mandarin Speaker Intern</span>
                             <span class="sub2-dropdown-arrow">▼</span>
                         </button>
                         <div class="sub2-dropdown-content">
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding &amp; Consumer Banking Mandarin Speaker Intern - Area Kendari</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Mandarin Speaker Intern - Area Kendari</a>
                         </div>
+                        -->
                     </div>
 
                     <!-- Region XI/Bali dan Nusa Tenggara -->
@@ -575,80 +639,76 @@
                         <span class="sub-dropdown-arrow">▼</span>
                     </button>
                     <div class="sub-dropdown-content">
-                        <!-- Nested 1 -->
+                        <!-- BELUM ADA LINK: Credit Cards Business Intern
                         <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
                             <span>Credit Cards Business Intern</span>
                             <span class="sub2-dropdown-arrow">▼</span>
                         </button>
                         <div class="sub2-dropdown-content">
-                            <a href="URL_HERE" class="dropdown-item">Credit Cards Business Intern - Area Denpasar</a>
+                            <a href="URL" class="dropdown-item">Credit Cards Business Intern - Area Denpasar</a>
                         </div>
-
-                        <!-- Nested 2 -->
+                        -->
                         <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
-                            <span>Retail Funding and Consumer Banking Intern</span>
+                            <span>Retail Funding &amp; Consumer Banking Intern</span>
                             <span class="sub2-dropdown-arrow">▼</span>
                         </button>
                         <div class="sub2-dropdown-content">
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Denpasar</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Denpasar 2</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Kupang 2</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Kupang</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Mataram 1</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Mataram 2</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Kupang 2</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Kuta Bali</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Kuta Bali 2</a>
+                            <a href="https://maganghub.kemnaker.go.id/magang-nasional/lowongan/retail-funding-&-consumer-banking-intern---area-mataram-01a21756-d0f9-7376-9f14-47e41f171c16" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Mataram</a>
+                            <!-- BELUM ADA LINK
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Denpasar</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Denpasar 2</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Kupang</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Kupang 2</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Mataram 1</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Mataram 2</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Kuta Bali</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Kuta Bali 2</a>
+                            -->
                         </div>
-                        </div>
+                    </div>
 
                     <!-- Region XII/Papua -->
+                    <!-- BELUM ADA LINK: Region XII/Papua
                     <button class="sub-dropdown-header" onclick="toggleSubDropdown(this)">
                         <div class="sub-header-text"><div class="sub-header-title">Region XII/Papua</div></div>
                         <span class="sub-dropdown-arrow">▼</span>
                     </button>
                     <div class="sub-dropdown-content">
-                        <!-- Nested 1 -->
                         <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
                             <span>Credit Cards Business Intern</span>
                             <span class="sub2-dropdown-arrow">▼</span>
                         </button>
                         <div class="sub2-dropdown-content">
-                            <a href="URL_HERE" class="dropdown-item">Credit Cards Business Intern - Region XII/Papua</a>
+                            <a href="URL" class="dropdown-item">Credit Cards Business Intern - Region XII/Papua</a>
                         </div>
-
-                        <!-- Nested 2 -->
                         <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
-                            <span>Retail Funding and Consumer Banking Intern</span>
+                            <span>Retail Funding &amp; Consumer Banking Intern</span>
                             <span class="sub2-dropdown-arrow">▼</span>
                         </button>
                         <div class="sub2-dropdown-content">
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding and Consumer Banking Intern - Region XII/Papua</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Jayapura</a>
-                            <a href="URL_HERE" class="dropdown-item">Retail Funding and Consumer Banking Intern - Area Sorong</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Region XII/Papua</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Jayapura</a>
+                            <a href="URL" class="dropdown-item">Retail Funding &amp; Consumer Banking Intern - Area Sorong</a>
                         </div>
-
-                        <!-- Nested 3 -->
                         <button class="sub2-dropdown-header" onclick="toggleSub2Dropdown(this)">
                             <span>Personal Loan Group Intern</span>
                             <span class="sub2-dropdown-arrow">▼</span>
                         </button>
                         <div class="sub2-dropdown-content">
-                            <a href="URL_HERE" class="dropdown-item">Personal Loan Group Intern - Area Jayapura</a>
+                            <a href="URL" class="dropdown-item">Personal Loan Group Intern - Area Jayapura</a>
                         </div>
-                        </div>
-
+                    </div>
+                    -->
                 </div>
             </div>
 
         </div>
-        </template>
 
     </div>
 
     <script>
         /* ====== EDIT HERE ====== */
-        const DEADLINE = new Date("2026-11-04T23:59:59+07:00"); // GANTI dengan tanggal dan jam countdown yang baru
+        const DEADLINE = new Date("2026-12-01T23:59:59+07:00"); // 1 Desember 2026, 23:59 WIB
 
         // Main dropdown
         function toggleDropdown(button) {
@@ -706,6 +766,8 @@
             const diff = DEADLINE - Date.now();
             if (diff <= 0) {
                 $('countdown').classList.add('closed');
+                $('links').remove(); // sembunyikan semua link setelah ditutup
+                $('cd-badge').textContent = 'Pendaftaran Ditutup';
                 $('cd-title').textContent = 'Pendaftaran Telah Ditutup';
                 $('cd-copy').textContent = 'Terima kasih atas antusiasmu. Pantau terus informasi lowongan berikutnya!';
                 clearInterval(timer);
