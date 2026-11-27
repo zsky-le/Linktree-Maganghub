@@ -77,6 +77,9 @@
         .cta { display: block; padding: 14px 16px; border-radius: 14px; background: #FFB700; color: #003D79; font-weight: 700; font-size: 14px; text-decoration: none; transition: transform .25s, box-shadow .25s, background .25s; }
         .cta:hover { transform: translateY(-3px); background: #ffc933; box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25); }
         .countdown.closed .timer { display: none; }
+        .countdown[hidden] { display: none !important; }
+        .coming-soon h2 { margin-bottom: 12px; }
+        .coming-soon .copy { margin-bottom: 0; }
 
         /* Links */
         .links-container { display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; }
@@ -260,11 +263,18 @@
             <p class="profile-bio">Lowongan Kerja MagangHub di Bank Mandiri</p>
         </div>
 
-        <!-- COUNTDOWN CONTAINER -->
-        <div class="countdown" id="countdown">
-            <span class="badge">Coming Soon!</span>
-            <h2 id="cd-title">Segera Hadir</h2>
-            <p class="copy" id="cd-copy">Bangun pengalaman kerja nyata di Bank Mandiri. Pilih posisi yang sesuai, siapkan CV terbaikmu, dan segera daftar!</p>
+        <!-- COMING SOON: tampilan sementara sebelum pendaftaran dibuka -->
+        <div class="countdown coming-soon">
+            <span class="badge">COMING SOON!</span>
+            <h2>Segera Hadir</h2>
+            <p class="copy">Bangun pengalaman kerja nyata di Bank Mandiri. Pilih posisi yang sesuai, siapkan CV terbaikmu, dan segera daftar!</p>
+        </div>
+
+        <!-- COUNTDOWN DISIMPAN: ubah hidden menjadi aktif jika ingin menampilkan countdown lagi -->
+        <div class="countdown" id="countdown" hidden>
+            <span class="badge">Pendaftaran Dibuka</span>
+            <h2 id="cd-title">Jangan Sampai Kehabisan Kesempatan!</h2>
+            <p class="copy" id="cd-copy">Bangun pengalaman kerja nyata di Bank Mandiri. Pilih posisi yang sesuai, siapkan CV terbaikmu, lalu daftar sebelum waktu habis.</p>
             <div class="timer" id="timer">
                 <div class="unit"><b id="d">00</b><span>Hari</span></div>
                 <div class="unit"><b id="h">00</b><span>Jam</span></div>
@@ -638,7 +648,7 @@
 
     <script>
         /* ====== EDIT HERE ====== */
-        const DEADLINE = new Date("2026-11-27T23:59:59+07:00"); // GANTI dengan tanggal dan jam countdown yang baru
+        const DEADLINE = new Date("2026-11-04T23:59:59+07:00"); // GANTI dengan tanggal dan jam countdown yang baru
 
         // Main dropdown
         function toggleDropdown(button) {
